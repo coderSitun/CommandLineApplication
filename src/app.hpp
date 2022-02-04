@@ -12,6 +12,7 @@ private:
         SUBTRACT,
         MULTIPLY,
         DIVIDE,
+        HALT,
         TOTAL_COMMANDS
     };
     bool appRun;

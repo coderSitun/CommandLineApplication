@@ -54,6 +54,8 @@ App::CommandType App::getCommandType(std::string command){
         return MULTIPLY;
     if(!command.compare("divide"))
         return DIVIDE;
+    if(!command.compare("halt"))
+        return HALT;
     return TOTAL_COMMANDS;
 }
 
