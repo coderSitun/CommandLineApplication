@@ -49,13 +49,13 @@ std::vector<std::string> App::parse(std::string commandWithArgs, char delim){
 App::CommandType App::getCommandType(std::string command){
     if(!command.compare("add"))
         return ADD;
-    if(!command.compare("subtract"))
+    if(!command.compare("sub") || !command.compare("subtract"))
         return SUBTRACT;
-    if(!command.compare("multiply"))
+    if(!command.compare("mul") || !command.compare("multiply"))
         return MULTIPLY;
-    if(!command.compare("divide"))
+    if(!command.compare("div") || !command.compare("divide"))
         return DIVIDE;
-    if(!command.compare("halt"))
+    if(!command.compare("hal") || !command.compare("halt"))
         return HALT;
     return TOTAL_COMMANDS;
 }
