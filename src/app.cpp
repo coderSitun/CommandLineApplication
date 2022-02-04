@@ -11,18 +11,6 @@ void App::run(){
     executer.join();
 }
 
-App::CommandType App::getCommandType(std::string command){
-    if(!command.compare("add"))
-        return ADD;
-    if(!command.compare("subtract"))
-        return SUBTRACT;
-    if(!command.compare("multiply"))
-        return MULTIPLY;
-    if(!command.compare("divide"))
-        return DIVIDE;
-    return TOTAL_COMMANDS;
-}
-
 void App::cli(){
 }
 
@@ -42,4 +30,16 @@ void App::execute(){
         }
         std::this_thread::sleep_for(std::chrono::microseconds(10));
     }
+}
+
+App::CommandType App::getCommandType(std::string command){
+    if(!command.compare("add"))
+        return ADD;
+    if(!command.compare("subtract"))
+        return SUBTRACT;
+    if(!command.compare("multiply"))
+        return MULTIPLY;
+    if(!command.compare("divide"))
+        return DIVIDE;
+    return TOTAL_COMMANDS;
 }
