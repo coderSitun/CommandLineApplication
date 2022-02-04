@@ -8,6 +8,7 @@
 class App{
 private:
     enum CommandType{
+        BLANK,
         ADD,
         SUBTRACT,
         MULTIPLY,

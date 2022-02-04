@@ -47,6 +47,8 @@ std::vector<std::string> App::parse(std::string commandWithArgs, char delim){
 }
 
 App::CommandType App::getCommandType(std::string command){
+    if(!command.compare(""))
+        return BLANK;
     if(!command.compare("add"))
         return ADD;
     if(!command.compare("sub") || !command.compare("subtract"))
@@ -64,6 +66,8 @@ void App::operate(std::string commandWithArgs){
     std::vector<std::string> parts = parse(commandWithArgs);
     switch(getCommandType(parts[0]))
     {
+        case BLANK:
+            break;
         case ADD:
             std::cout << parts[1] << " + " << parts[2] << " = " << atoi(parts[1].c_str()) + atoi(parts[2].c_str()) << std::endl;
             break;
