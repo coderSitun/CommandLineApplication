@@ -11,7 +11,8 @@ private:
         ADD,
         SUBTRACT,
         MULTIPLY,
-        DIVIDE
+        DIVIDE,
+        TOTAL_COMMANDS
     };
     bool appRun;
     std::queue<std::string> commands;
