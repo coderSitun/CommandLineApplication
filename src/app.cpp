@@ -1,6 +1,7 @@
 #include"app.hpp"
 #include<thread>
 #include<chrono>
+#include<iostream>
 
 void App::run(){
     this->appRun = true;
@@ -12,6 +13,15 @@ void App::run(){
 }
 
 void App::cli(){
+    std::string input;
+    do{
+        std::cout << "App>>";
+        std::cin >> input;
+        if(!input.substr(0, 4).compare("exit"))
+            appRun = false;
+        else
+            commandsWithArgs.push(input);
+    }while(appRun);
 }
 
 void App::execute(){
