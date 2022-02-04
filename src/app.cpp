@@ -28,8 +28,8 @@ void App::cli(){
 
 void App::execute(){
     while(this->appRun){
-        while(!commands.empty()){
-            std::vector<std::string> parts = parse(commands.front());
+        while(!commandsWithArgs.empty()){
+            std::vector<std::string> parts = parse(commandsWithArgs.front());
             switch(getCommandType(parts[0]))
             {
                 case ADD:
@@ -38,7 +38,7 @@ void App::execute(){
                 case DIVIDE:
                 default:;
             }
-            commands.pop();
+            commandsWithArgs.pop();
         }
         std::this_thread::sleep_for(std::chrono::microseconds(10));
     }

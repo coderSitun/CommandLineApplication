@@ -15,7 +15,7 @@ private:
         TOTAL_COMMANDS
     };
     bool appRun;
-    std::queue<std::string> commands;
+    std::queue<std::string> commandsWithArgs;
     std::vector<std::string> parse(std::string commandWithArgs);
     CommandType getCommandType(std::string command);
     void cli();
