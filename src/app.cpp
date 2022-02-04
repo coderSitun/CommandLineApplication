@@ -4,8 +4,8 @@
 
 void App::run(){
     this->appRun = true;
-    std::thread commandLine(this->cli);
-    std::thread executer(this->execute);
+    std::thread commandLine(&App::cli, this);
+    std::thread executer(&App::execute, this);
 
     commandLine.join();
     executer.join();
@@ -24,7 +24,7 @@ void App::execute(){
                 case SUBTRACT:
                 case MULTIPLY:
                 case DIVIDE:
-                default:
+                default:;
             }
             commands.pop();
         }

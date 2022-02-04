@@ -3,6 +3,7 @@
         "thread": "cpp",
         "vector": "cpp",
         "queue": "cpp",
-        "chrono": "cpp"
+        "chrono": "cpp",
+        "*.tcc": "cpp"
     }
 }
