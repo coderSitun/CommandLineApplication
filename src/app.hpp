@@ -17,10 +17,10 @@ private:
     std::queue<std::string> commands;
     std::vector<std::string> parse(std::string commandWithArgs);
     CommandType getCommandType(std::string command);
-public:
-    void run();
     void cli();
     void execute();
+public:
+    void run();
 };
 
 #endif
