@@ -32,6 +32,17 @@ void App::execute(){
     }
 }
 
+std::vector<std::string> parse(std::string commandWithArgs, char delim){
+    std::vector<std::string> parsedStrings;
+    std::string::size_type index = 0;
+    std::string::size_type findPos;
+    while((findPos = commandWithArgs.find(delim, index)) != std::string::npos){
+        parsedStrings.push_back(commandWithArgs.substr(index, findPos - index));
+        index += (findPos + 1);
+    }
+    return parsedStrings;
+}
+
 App::CommandType App::getCommandType(std::string command){
     if(!command.compare("add"))
         return ADD;
