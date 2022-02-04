@@ -84,6 +84,7 @@ void App::operate(std::string commandWithArgs){
         case HALT:
             std::this_thread::sleep_for(std::chrono::seconds(atoi(parts[1].c_str())));
             std::cout << "Halted for " << parts[1] << " seconds" << std::endl;
+            break;
         default:
             std::cout << "Invalid Command" << std::endl;
     }
