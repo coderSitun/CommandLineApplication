@@ -64,9 +64,26 @@ void App::operate(std::string commandWithArgs){
     switch(getCommandType(parts[0]))
     {
         case ADD:
+            std::cout << parts[1] << " + " << parts[2] << " = " << atoi(parts[1].c_str()) + atoi(parts[2].c_str()) << std::endl;
+            break;
         case SUBTRACT:
+            std::cout << parts[1] << " - " << parts[2] << " = " << atoi(parts[1].c_str()) + atoi(parts[2].c_str()) << std::endl;
+            break;
         case MULTIPLY:
+            std::cout << parts[1] << " * " << parts[2] << " = " << atoi(parts[1].c_str()) + atoi(parts[2].c_str()) << std::endl;
+            break;
         case DIVIDE:
-        default:;
+            if(atoi(parts[2].c_str())){
+                std::cout << parts[1] << " / " << parts[2] << " = " << atoi(parts[1].c_str()) + atoi(parts[2].c_str()) << std::endl;
+            }
+            else{
+                std::cout << "Denominator is 0. Invalid operation!!" << std::endl;
+            }
+            break;
+        case HALT:
+            std::this_thread::sleep_for(std::chrono::seconds(atoi(parts[1].c_str())));
+            std::cout << "Halted for " << parts[1] << " seconds" << std::endl;
+        default:
+            std::cout << "Invalid Command" << std::endl;
     }
 }
