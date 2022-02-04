@@ -16,7 +16,7 @@ private:
     };
     bool appRun;
     std::queue<std::string> commandsWithArgs;
-    std::vector<std::string> parse(std::string commandWithArgs);
+    std::vector<std::string> parse(std::string commandWithArgs, char delim = ' ');
     CommandType getCommandType(std::string command);
     void cli();
     void execute();
