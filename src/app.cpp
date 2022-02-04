@@ -42,7 +42,7 @@ void App::execute(){
     }
 }
 
-std::vector<std::string> parse(std::string commandWithArgs, char delim){
+std::vector<std::string> App::parse(std::string commandWithArgs, char delim){
     std::vector<std::string> parsedStrings;
     std::string::size_type index = 0;
     std::string::size_type findPos;
