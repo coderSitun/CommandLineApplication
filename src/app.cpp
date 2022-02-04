@@ -40,8 +40,9 @@ std::vector<std::string> App::parse(std::string commandWithArgs, char delim){
     std::string::size_type findPos;
     while((findPos = commandWithArgs.find(delim, index)) != std::string::npos){
         parsedStrings.push_back(commandWithArgs.substr(index, findPos - index));
-        index += (findPos + 1);
+        index = (findPos + 1);
     }
+    parsedStrings.push_back(commandWithArgs.substr(index, commandWithArgs.length() - index));
     return parsedStrings;
 }
 
