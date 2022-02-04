@@ -68,14 +68,14 @@ void App::operate(std::string commandWithArgs){
             std::cout << parts[1] << " + " << parts[2] << " = " << atoi(parts[1].c_str()) + atoi(parts[2].c_str()) << std::endl;
             break;
         case SUBTRACT:
-            std::cout << parts[1] << " - " << parts[2] << " = " << atoi(parts[1].c_str()) + atoi(parts[2].c_str()) << std::endl;
+            std::cout << parts[1] << " - " << parts[2] << " = " << atoi(parts[1].c_str()) - atoi(parts[2].c_str()) << std::endl;
             break;
         case MULTIPLY:
-            std::cout << parts[1] << " * " << parts[2] << " = " << atoi(parts[1].c_str()) + atoi(parts[2].c_str()) << std::endl;
+            std::cout << parts[1] << " * " << parts[2] << " = " << atoi(parts[1].c_str()) * atoi(parts[2].c_str()) << std::endl;
             break;
         case DIVIDE:
             if(atoi(parts[2].c_str())){
-                std::cout << parts[1] << " / " << parts[2] << " = " << atoi(parts[1].c_str()) + atoi(parts[2].c_str()) << std::endl;
+                std::cout << parts[1] << " / " << parts[2] << " = " << atoi(parts[1].c_str()) / atoi(parts[2].c_str()) << std::endl;
             }
             else{
                 std::cout << "Denominator is 0. Invalid operation!!" << std::endl;
