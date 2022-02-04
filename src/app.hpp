@@ -20,6 +20,7 @@ private:
     CommandType getCommandType(std::string command);
     void cli();
     void execute();
+    void operate(std::string commandWithArgs);
 public:
     void run();
 };
