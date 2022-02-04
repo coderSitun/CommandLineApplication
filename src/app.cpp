@@ -16,7 +16,7 @@ void App::cli(){
     std::string input;
     do{
         std::cout << "App>>";
-        std::cin >> input;
+        getline(std::cin, input);
         if(!input.substr(0, 4).compare("exit"))
             appRun = false;
         else
