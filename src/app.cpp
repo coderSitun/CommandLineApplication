@@ -74,7 +74,11 @@ App::CommandType App::getCommandType(std::string command){
 void App::operate(std::string commandWithArgs){
     std::vector<std::string> parts = parse(commandWithArgs);
     CommandType commandType = getCommandType(parts[0]);
-    
+
+    if(commandType >= TOTAL_COMMANDS){
+        std::cerr << "Invalid Command: " << parts[0] << std::endl;
+        return;
+    }
     if(parts.size() <= properties[commandType].numberOfArgs){
         std::cerr << "usage: " << properties[commandType].usage << std::endl;
         return;
@@ -104,8 +108,6 @@ void App::operate(std::string commandWithArgs){
         case HALT:
             std::this_thread::sleep_for(std::chrono::seconds(atoi(parts[1].c_str())));
             std::cout << "Halted for " << parts[1] << " seconds" << std::endl;
-            break;
-        default:
-            std::cout << "Invalid Command" << std::endl;
+            break;            
     }
 }
