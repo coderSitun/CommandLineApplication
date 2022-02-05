@@ -16,8 +16,13 @@ private:
         HALT,
         TOTAL_COMMANDS
     };
+    struct Properties{
+        unsigned int numberOfArgs;
+    };
+
     bool appRun;
     std::queue<std::string> commandsWithArgs;
+    Properties properties[TOTAL_COMMANDS];
     std::vector<std::string> parse(std::string commandWithArgs, char delim = ' ');
     CommandType getCommandType(std::string command);
     void cli();
