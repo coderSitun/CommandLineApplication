@@ -73,7 +73,11 @@ App::CommandType App::getCommandType(std::string command){
 
 void App::operate(std::string commandWithArgs){
     std::vector<std::string> parts = parse(commandWithArgs);
-    switch(getCommandType(parts[0]))
+    CommandType commandType = getCommandType(parts[0]);
+    if(parts.size() <= properties[commandType].numberOfArgs)
+        return;
+
+    switch(commandType)
     {
         case BLANK:
             break;
