@@ -18,6 +18,7 @@ private:
     };
     struct Properties{
         unsigned int numberOfArgs;
+        std::string usage;
     };
 
     bool appRun;

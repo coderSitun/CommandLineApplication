@@ -4,12 +4,12 @@
 #include<iostream>
 
 App::App(){
-    properties[BLANK]    = {0};
-    properties[ADD]      = {2};
-    properties[SUBTRACT] = {2};
-    properties[MULTIPLY] = {2};
-    properties[DIVIDE]   = {2};
-    properties[HALT]     = {1};
+    properties[BLANK]    = {0, ""};
+    properties[ADD]      = {2, "add <operand1> <operand2>"};
+    properties[SUBTRACT] = {2, "sub <operand1> <operand2>"};
+    properties[MULTIPLY] = {2, "mul <operand1> <operand2>"};
+    properties[DIVIDE]   = {2, "div <operand1> <operand2>"};
+    properties[HALT]     = {1, "hal <time_in_seconds>"    };
 }
 
 void App::run(){
@@ -74,8 +74,11 @@ App::CommandType App::getCommandType(std::string command){
 void App::operate(std::string commandWithArgs){
     std::vector<std::string> parts = parse(commandWithArgs);
     CommandType commandType = getCommandType(parts[0]);
-    if(parts.size() <= properties[commandType].numberOfArgs)
+    
+    if(parts.size() <= properties[commandType].numberOfArgs){
+        std::cerr << "usage: " << properties[commandType].usage << std::endl;
         return;
+    }
 
     switch(commandType)
     {
