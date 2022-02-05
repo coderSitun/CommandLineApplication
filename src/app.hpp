@@ -29,6 +29,7 @@ private:
     void execute();
     void operate(std::string commandWithArgs);
 public:
+    App();
     void run();
 };
 

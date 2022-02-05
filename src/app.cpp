@@ -3,6 +3,15 @@
 #include<chrono>
 #include<iostream>
 
+App::App(){
+    properties[BLANK]    = {0};
+    properties[ADD]      = {2};
+    properties[SUBTRACT] = {2};
+    properties[MULTIPLY] = {2};
+    properties[DIVIDE]   = {2};
+    properties[HALT]     = {1};
+}
+
 void App::run(){
     this->appRun = true;
     std::thread commandLine(&App::cli, this);
